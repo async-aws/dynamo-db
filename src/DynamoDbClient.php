@@ -782,7 +782,7 @@ class DynamoDbClient extends AbstractApi
                 ];
             case 'local':
                 return [
-                    'endpoint' => 'http://localhost:8000',
+                    'endpoint' => $this->getConfiguration()->get('hostname') ?? 'http://localhost:8000',
                     'signRegion' => 'us-east-1',
                     'signService' => 'dynamodb',
                     'signVersions' => ['v4'],
